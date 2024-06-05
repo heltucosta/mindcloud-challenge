@@ -1,0 +1,71 @@
+.stepBox {
+  position: relative;
+  border: 2px #efefef solid;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+  justify-content: start;
+  padding: 12px 12px;
+  margin: 12px 12px;
+  background-color: white;
+  z-index: 1;
+}
+
+.selectedStepBox {
+  border: 2px purple solid;
+}
+
+.stepIcon {
+  margin: auto 12px;
+  height: 24px;
+  width: 24px;
+}
+
+.stepNumber {
+  background: #efefef;
+  padding: 6px;
+  font-size: 12px;
+  margin-right: 6px;
+  border-radius: 8px;
+  color: gray;
+  font-weight: bold;
+}
+
+.stepName {
+  flex: 1;
+  font-weight: bold;
+}
+
+.stepList {
+  margin: auto 12px;
+  display: flex;
+  background-color: #efefef;
+  border-radius: 5px;
+  padding: 6px;
+}
+
+.stepListIcon {
+  margin: auto;
+  width: 20px;
+  height: 20px;
+}
+
+.stepListNumber {
+  margin: auto 6px;
+}
+
+.errorIcon {
+  position: absolute;
+  right: -36px;
+  top: 24px;
+  width: 32px;
+  height: 24px;
+  fill: orange;
+}
+
+.separator {
+  width: 65%;
+  margin: auto;
+  border: 2px #efefef solid;
+}

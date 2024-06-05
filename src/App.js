@@ -1,23 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react'
+import './App.css'
+import Step from './components/Step'
+import { MdTransform, MdPersonPin } from 'react-icons/md'
+
+const steps = [
+  {
+    name: 'Merge Employess with Demographics',
+    stepNumber: 11,
+    icon: <MdTransform className='stepIcon' />,
+    listAmount: 100
+  },
+  {
+    name: 'Update User',
+    stepNumber: 12,
+    icon: <MdPersonPin className='stepIcon' />,
+    hasError: true
+  }
+]
 
 function App() {
+  const [selectedStep, setSelectedStep] = useState(null) 
+
+  const handleStepClick = stepNumber => {
+    setSelectedStep(stepNumber)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='stepperBox'>
+      {steps.map((step, idx) => (
+        <Step
+          step={step}
+          selectedStep={selectedStep}
+          hasSeparator={idx < steps.length - 1}
+          handleClick={handleStepClick}
+        />
+      ))}
+      <div className='guideline' style={{height: ((steps.length - 1)*120) + 'px'}} />
     </div>
   );
 }
